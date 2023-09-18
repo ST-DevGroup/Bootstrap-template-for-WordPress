@@ -1,0 +1,1246 @@
+// Compile "main.scss" as "css/main.css"
+
+/**
+ * Import Bootstrap sources
+ * https://getbootstrap.com/docs/5.2/customize/sass
+ */
+
+// @import "../node_modules/bootstrap/scss/bootstrap"; // Include all of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import '../node_modules/bootstrap/scss/functions';
+
+// 2. Include any default variable overrides here
+
+// Options
+$enable-dark-mode: false;
+$enable-rounded: true;
+$enable-shadows: true;
+$enable-gradients: true;
+$enable-transitions: true;
+$enable-reduced-motion: true;
+$enable-grid-classes: true;
+$enable-container-classes: true;
+$enable-caret: true;
+$enable-button-pointers: true;
+$enable-rfs: true;
+$enable-validation-icons: true;
+$enable-negative-margins: true;
+$enable-deprecation-messages: true;
+$enable-important-utilities: true;
+$enable-smooth-scroll: true;
+
+$spacer: 1rem;
+
+// Grayscale vars
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+
+// Color vars
+$blue: #0d6efd;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #d63384;
+$red: #dc3545;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #198754;
+$teal: #20c997;
+$cyan: #0dcaf0;
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-ExtraBold.woff2') format('woff2'),
+		url('fonts/Montserrat-ExtraBold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-BlackItalic.woff2') format('woff2'),
+		url('fonts/Montserrat-BlackItalic.woff') format('woff');
+	font-weight: 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-MediumItalic.woff2') format('woff2'),
+		url('fonts/Montserrat-MediumItalic.woff') format('woff');
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-Bold.woff2') format('woff2'),
+		url('fonts/Montserrat-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-LightItalic.woff2') format('woff2'),
+		url('fonts/Montserrat-LightItalic.woff') format('woff');
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-ExtraLightItalic.woff2') format('woff2'),
+		url('fonts/Montserrat-ExtraLightItalic.woff') format('woff');
+	font-weight: 200;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-ExtraLight.woff2') format('woff2'),
+		url('fonts/Montserrat-ExtraLight.woff') format('woff');
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-Light.woff2') format('woff2'),
+		url('fonts/Montserrat-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-BoldItalic.woff2') format('woff2'),
+		url('fonts/Montserrat-BoldItalic.woff') format('woff');
+	font-weight: bold;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-Italic.woff2') format('woff2'),
+		url('fonts/Montserrat-Italic.woff') format('woff');
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-Medium.woff2') format('woff2'),
+		url('fonts/Montserrat-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-ExtraBoldItalic.woff2') format('woff2'),
+		url('fonts/Montserrat-ExtraBoldItalic.woff') format('woff');
+	font-weight: bold;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-Black.woff2') format('woff2'),
+		url('fonts/Montserrat-Black.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-Regular.woff2') format('woff2'),
+		url('fonts/Montserrat-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-SemiBold.woff2') format('woff2'),
+		url('fonts/Montserrat-SemiBold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-Thin.woff2') format('woff2'),
+		url('fonts/Montserrat-Thin.woff') format('woff');
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-SemiBoldItalic.woff2') format('woff2'),
+		url('fonts/Montserrat-SemiBoldItalic.woff') format('woff');
+	font-weight: 600;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-ThinItalic.woff2') format('woff2'),
+		url('fonts/Montserrat-ThinItalic.woff') format('woff');
+	font-weight: 100;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('fonts/RobotoSlab-Regular.woff2') format('woff2'),
+        url('fonts/RobotoSlab-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('fonts/RobotoSlab-SemiBold.woff2') format('woff2'),
+        url('fonts/RobotoSlab-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('fonts/RobotoSlab-Medium.woff2') format('woff2'),
+        url('fonts/RobotoSlab-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('fonts/RobotoSlab-Thin.woff2') format('woff2'),
+        url('fonts/RobotoSlab-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('fonts/RobotoSlab-ExtraLight.woff2') format('woff2'),
+        url('fonts/RobotoSlab-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('fonts/RobotoSlab-ExtraBold.woff2') format('woff2'),
+        url('fonts/RobotoSlab-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('fonts/RobotoSlab-Bold.woff2') format('woff2'),
+        url('fonts/RobotoSlab-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('fonts/RobotoSlab-Light.woff2') format('woff2'),
+        url('fonts/RobotoSlab-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('fonts/RobotoSlab-Black.woff2') format('woff2'),
+        url('fonts/RobotoSlab-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+// Fonts
+$font-family-sans-serif: "Montserrat", sans-serif;
+$font-family-base: $font-family-sans-serif;
+
+$link-decoration: none;
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/variables-dark';
+
+// 4. Include any default map overrides here
+
+// 5. Include remainder of required parts
+@import '../node_modules/bootstrap/scss/maps';
+@import '../node_modules/bootstrap/scss/mixins';
+@import '../node_modules/bootstrap/scss/root';
+
+// 6. Optionally include any other parts as needed: Uncomment components to reduce the filesize
+@import '../node_modules/bootstrap/scss/utilities';
+@import '../node_modules/bootstrap/scss/reboot';
+@import '../node_modules/bootstrap/scss/type';
+@import '../node_modules/bootstrap/scss/images';
+@import '../node_modules/bootstrap/scss/containers';
+@import '../node_modules/bootstrap/scss/grid';
+@import '../node_modules/bootstrap/scss/tables';
+@import '../node_modules/bootstrap/scss/forms';
+@import '../node_modules/bootstrap/scss/buttons';
+@import '../node_modules/bootstrap/scss/transitions';
+@import '../node_modules/bootstrap/scss/dropdown';
+@import '../node_modules/bootstrap/scss/button-group';
+@import '../node_modules/bootstrap/scss/nav';
+@import '../node_modules/bootstrap/scss/navbar';
+@import '../node_modules/bootstrap/scss/card';
+@import '../node_modules/bootstrap/scss/accordion';
+@import '../node_modules/bootstrap/scss/breadcrumb';
+@import '../node_modules/bootstrap/scss/pagination';
+@import '../node_modules/bootstrap/scss/badge';
+@import '../node_modules/bootstrap/scss/alert';
+@import '../node_modules/bootstrap/scss/progress';
+@import '../node_modules/bootstrap/scss/list-group';
+@import '../node_modules/bootstrap/scss/close';
+@import '../node_modules/bootstrap/scss/toasts';
+@import '../node_modules/bootstrap/scss/modal';
+@import '../node_modules/bootstrap/scss/tooltip';
+@import '../node_modules/bootstrap/scss/popover';
+@import '../node_modules/bootstrap/scss/carousel';
+@import '../node_modules/bootstrap/scss/spinners';
+@import '../node_modules/bootstrap/scss/offcanvas';
+@import '../node_modules/bootstrap/scss/helpers';
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import '../node_modules/bootstrap/scss/utilities/api';
+
+/**
+ * General
+ */
+
+body {
+	position: relative;
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: $font-family-base;
+		color: #212529;
+		line-height: 1.2;
+	}
+
+	p {
+		margin-top: 0;
+		--bs-text-opacity: 1;
+		color: #6c757d !important;
+		font-family: "Roboto Slab";
+	}
+
+	&.page-template-page-full {
+		#main {
+			max-width: 100%;
+		}
+	}
+
+	/* If WP-Adminbar is visible */
+	&.admin-bar {
+		#header.fixed-top {
+			top: var(--wp-admin--admin-bar--height);
+		}
+
+		.edit-link a {
+			color: #fff !important;
+			font-weight: normal !important;
+			text-decoration: none !important;
+
+			&::before {
+				content: '\270E';
+				display: inline-block;
+				margin-right: 5px;
+			}
+		}
+	}
+}
+
+img {
+	vertical-align: middle;
+}
+
+/**
+ * WordPress customization
+ */
+
+/* WordPress Embeds */
+
+.post-thumbnail,
+.wp-video,
+.embed-responsive {
+	margin: 5px 0;
+	width: 100% !important;
+}
+
+.post,
+.post-thumbnail {
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+/* Header */
+
+#header {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	background-color: #212529;
+	z-index: 999;
+
+	@include media-breakpoint-up(lg) {
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+		border: none;
+		background-color: transparent;
+		transition: padding-top 0.3s ease-in-out,
+			padding-bottom 0.3s ease-in-out;
+
+	}
+
+
+	.search-form {
+		min-width: 250px;
+	}
+}
+
+.navbar-brand {
+	img {
+		height: 2rem;
+		transition: height 0.3s ease-in-out;
+	}
+}
+
+.navbar {
+	background-image: none;
+}
+
+
+
+.navbar-static-top {
+	margin-bottom: $grid-gutter-width;
+}
+
+@include media-breakpoint-up(lg) {
+	.fixed-top {
+		padding-top: 1rem !important;
+		padding-bottom: 1rem !important;
+		background-color: #212529 !important;
+
+		.navbar-brand {
+			img {
+				height: 1.5rem;
+			}
+		}
+	}
+
+}
+
+/* Main */
+
+#main {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+svg {
+	width: auto;
+	height: 16px;
+}
+
+/* Footer */
+
+#footer {
+	background-color: #ffffff;
+	text-align: center;
+	font-size: 0.9rem;
+	font-family: $font-family-base;
+
+	p {
+		margin-top: 10px;
+		color: #212529!important;
+	}
+
+	.menu-item {
+		.nav-link {
+			color: #212529 !important;
+			font-size: 16px;
+		}
+	}
+}
+
+/* Sidebar */
+
+.widget-area {
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+}
+
+/* Author */
+
+.author-avatar {
+	.avatar {
+		width: 64px;
+		height: auto;
+	}
+}
+
+.author-info {
+	margin: 40px 0;
+
+	h2,
+	h3 {
+		margin-top: 0;
+	}
+}
+
+/* Posts */
+
+.sticky {
+	.card {
+		background-color: $gray-100;
+	}
+}
+
+.entry-meta {
+	font-size: small;
+	margin-top: ($grid-gutter-width * 0.5);
+}
+
+.single {
+
+	.entry-content,
+	.post-navigation,
+	#comments-title {
+		margin: $grid-gutter-width 0;
+	}
+}
+
+#comments {
+	margin-top: $grid-gutter-width;
+}
+
+.comment-meta {
+	height: 40px;
+}
+
+.comment-reply-title {
+	margin: $grid-gutter-width 0 ($grid-gutter-width * 0.5);
+}
+
+.commentlist {
+	list-style: none;
+	margin: 0 auto;
+	width: 68.9%;
+
+	>li.comment {
+		margin: 0 0 1.625em;
+		padding: 1.625em;
+		position: relative;
+	}
+
+	.children {
+		list-style: none;
+		margin-top: $grid-gutter-width;
+
+		>li.comment {
+			border-top: 1px solid $gray-300;
+			padding-top: $grid-gutter-width;
+			position: relative;
+		}
+	}
+
+	.avatar {
+		width: 64px;
+		height: 64px;
+		border-radius: 50%;
+		box-shadow: 0 1px 2px $gray-600;
+		padding: 0;
+		position: absolute;
+		top: 0;
+		left: -102px;
+	}
+}
+
+/* WordPress Blocks */
+
+// Buttons
+
+.wp-block-button {
+	&.is-style-outline {
+		.wp-block-button__link {
+			@extend .btn;
+			@extend .btn-outline-primary;
+		}
+	}
+
+	&.btn-lg {
+		.wp-block-button__link {
+			@extend .btn-lg;
+		}
+	}
+
+	&.btn-sm {
+		.wp-block-button__link {
+			@extend .btn-sm;
+		}
+	}
+
+	.wp-block-button__link {
+		@extend .btn;
+		@extend .btn-primary;
+		text-decoration: none;
+	}
+}
+
+.btn-social {
+	height: 2.5rem;
+	width: 2.5rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	border-radius: 100%;
+}
+
+.btn-primary {
+	--bs-btn-color: #fff;
+	--bs-btn-bg: #ffc800;
+	--bs-btn-border-color: #ffc800;
+	--bs-btn-hover-color: #fff;
+	--bs-btn-hover-bg: #d9aa00;
+	--bs-btn-hover-border-color: #cca000;
+	--bs-btn-focus-shadow-rgb: 255, 208, 38;
+	--bs-btn-active-color: #fff;
+	--bs-btn-active-bg: #cca000;
+	--bs-btn-active-border-color: #bf9600;
+	--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	--bs-btn-disabled-color: #fff;
+	--bs-btn-disabled-bg: #ffc800;
+	--bs-btn-disabled-border-color: #ffc800;
+}
+
+.btn-xl {
+	padding: 1.25rem 2.5rem;
+	font-family: $font-family-base;
+	font-size: 1.125rem;
+	font-weight: 700;
+}
+
+.btn:hover {
+	color: var(--bs-btn-hover-color);
+	background-color: var(--bs-btn-hover-bg);
+	border-color: var(--bs-btn-hover-border-color);
+}
+
+// Table
+
+.wp-block-table {
+
+	td,
+	th {
+		border: inherit;
+	}
+
+	table {
+		@extend .table;
+	}
+}
+
+// Image, Media and Text
+
+.wp-block-image,
+.wp-block-media-text__media {
+
+	img,
+	video {
+		height: auto;
+	}
+}
+
+.svg-inline--fa {
+	display: var(--fa-display, inline-block);
+	height: 1em;
+	overflow: visible;
+	vertical-align: -0.125em;
+}
+
+/**
+ * Responsive Design using "mixins/_breakpoints.scss"
+ */
+
+@media (max-width: breakpoint-max(sm)) {
+	#sidebar {
+		margin-top: 60px;
+	}
+}
+
+#menu-main-menu {
+	li.menu-item {
+		padding: 0 7px;
+
+		a.nav-link {
+			color: #ffffff;
+			font-size: 0.95rem;
+			letter-spacing: 0.0625em;
+			text-transform: uppercase;
+		}
+	}
+	a.nav-link.active {
+		color: #ffc800!important;
+	}
+}
+
+#home-hero {
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	padding-top: 10.5rem;
+	padding-bottom: 6rem;
+
+	@include media-breakpoint-down(md) {
+		margin-top: -60px;
+	}
+
+	h1 {
+		font-size: 3.25rem;
+		font-weight: 700;
+		line-height: 3.25rem;
+		margin-bottom: 2rem;
+	}
+
+	h2 {
+		font-style: italic;
+		font-family: "Roboto Slab";
+	}
+
+	@include media-breakpoint-up(md) {
+		padding-top: 17rem;
+		padding-bottom: 12.5rem;
+		position: absolute;
+		top: 0;
+		width: 100%;
+
+		h1 {
+			font-size: 4.5rem;
+			line-height: 4.5rem;
+			margin-bottom: 4rem
+		}
+
+		h2 {
+			font-size: 2.25rem;
+			line-height: 2.25rem;
+			margin-bottom: 2rem;
+		}
+	}
+
+	.home-hero-content {
+
+		h1,
+		h2 {
+			color: #ffffff;
+		}
+
+		h2 {
+			font-family: "Roboto Slab";
+		}
+	}
+}
+
+#services,
+#portfolio,
+#team,
+#about,
+#contact-us {
+	padding: 6rem 0px;
+
+	h2 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		text-transform: uppercase;
+	}
+
+	@include media-breakpoint-down(sm) {
+		padding: 3rem 0px;
+	}
+}
+
+#services {
+	h2 {
+		font-weight: 700;
+	}
+	@include media-breakpoint-up(md) {
+		padding-bottom: 6rem;
+		margin-top: 90vh;
+	}
+	@include media-breakpoint-up(lg) {
+		margin-top: 83vh;
+	}
+	@include media-breakpoint-up(xl) {
+		margin-top: 70vh;
+	}
+
+	.services-heading {
+		p {
+			font-size: 1rem;
+			font-weight: 400;
+			font-style: italic;
+			font-family: "Roboto Slab";
+			margin-bottom: 4rem;
+		}
+	}
+
+	.services-block-content {
+		h4 {
+			font-weight: 700;
+		}
+		p {
+			margin-top: 0px;
+			margin-bottom: 1rem;
+			line-height: 1.75;
+			--bs-text-opacity: 1;
+			font-family: "Roboto Slab";
+		}
+	}
+
+	.fa-stack {
+		display: inline-block;
+		vertical-align: middle;
+		position: relative;
+		background-color: #ffc800;
+		width: 2em;
+		border-radius: 100%;
+
+		img {
+			width: 70px;
+			height: 70px;
+			object-fit: contain;
+		}
+
+		.fa-stack-2x {
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+	}
+
+	.fa-4x {
+		font-size: 4em;
+	}
+}
+
+#portfolio {
+	h2, h4 {
+		font-weight: 700;
+	}
+	a {
+		color: #ffc800;
+		text-decoration: underline;
+	}
+
+	p {
+		font-style: italic;
+		font-family: "Roboto Slab";
+	}
+
+	.portfolio-item {
+		max-width: 26rem;
+
+		.portfolio-link {
+			position: relative;
+			display: block;
+			margin: 0 auto;
+
+			.portfolio-hover {
+				display: flex;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background: rgba(255, 200, 0, 0.9);
+				align-items: center;
+				justify-content: center;
+				opacity: 0;
+				transition: opacity ease-in-out 0.25s;
+
+				.portfolio-hover-content {
+					font-size: 1.25rem;
+					color: white;
+
+					svg:not(:host).svg-inline--fa,
+					svg:not(:root).svg-inline--fa {
+						overflow: visible;
+						box-sizing: content-box;
+					}
+
+					.fa-3x {
+						font-size: 3em;
+					}
+				}
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+
+			.portfolio-caption {
+				padding: 1.5rem;
+				text-align: center;
+				background-color: #fff;
+
+				h4 {
+					font-size: 1.5rem;
+					font-weight: 700;
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+.modal-dialog {
+	position: relative;
+	width: auto;
+	margin: var(--bs-modal-margin);
+	pointer-events: none;
+
+	@include media-breakpoint-up(sm) {
+		max-width: var(--bs-modal-width);
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.modal-content {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		color: var(--bs-modal-color);
+		pointer-events: auto;
+		background-color: var(--bs-modal-bg);
+		background-clip: padding-box;
+		border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+		border-radius: var(--bs-modal-border-radius);
+		outline: 0;
+	}
+}
+
+.modal-fade {
+	.modal-dialog {
+		transition: transform 0.3s ease-out;
+		transform: translate(0, -50px);
+	}
+}
+
+.portfolio-modal {
+	h2 {
+		font-size: 3rem;
+		line-height: 3rem;
+		font-weight: 700;
+	}
+
+	.modal-dialog {
+		margin: 0 auto;
+		max-width: 992px;
+	}
+}
+
+.portfolio-modal {
+	.modal-content {
+		padding-top: 6rem;
+		padding-bottom: 6rem;
+		text-align: center;
+
+		@include media-breakpoint-down('sm') {
+			padding-top: 1.5rem;
+			padding-bottom: 3.5rem;
+		}
+
+		p {
+			font-style: italic;
+			margin-bottom: 2rem;
+			font-family: "Roboto Slab";
+		}
+	}
+
+	.close-modal {
+		position: absolute;
+		top: 1.5rem;
+		right: 1.5rem;
+		width: 3rem;
+		height: 3rem;
+		cursor: pointer;
+		background-color: transparent;
+		z-index: 1;
+
+		.img {
+			width: 48px;
+			height: 48px;
+
+			@include media-breakpoint-down('sm') {
+				width: 35px;
+				height: 35px;
+			}
+		}
+
+		&:hover {
+			opacity: 0.3;
+		}
+	}
+}
+
+.modal-body {
+	position: relative;
+	flex: 1 1 auto;
+	padding: var(--bs-modal-padding);
+
+	.btn-xl {
+		@include media-breakpoint-down(sm) {
+			font-size: 1rem;
+		}
+	}
+}
+
+#about {
+	h2 {
+		font-weight: 700;
+	}
+	.timeline {
+		>div:first-of-type {
+			margin-top: 0;
+		}
+
+		>div {
+			margin-top: $spacer*3;
+		}
+
+		@include media-breakpoint-up(md) {
+			>div {
+				margin-top: $spacer*7;
+			}
+		}
+
+		&:before {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 12%;
+			width: 2px;
+			content: "";
+			background-color: #e9ecef;
+			z-index: -1;
+
+			@include media-breakpoint-up(sm) {
+				left: 8%;
+			}
+
+			@include media-breakpoint-up(md) {
+				left: 50%;
+			}
+
+		}
+	}
+
+	h4 {
+		font-weight: 700;
+		line-height: 1.2;
+	}
+
+	.about-img-conteiner {
+
+		img {
+			height: 80px;
+			width: 80px;
+
+			border: 0.5rem solid rgba(0, 0, 0, 0.1);
+
+			@include media-breakpoint-up(md) {
+
+				width: 100px;
+				height: 100px;
+			}
+
+			@include media-breakpoint-up(lg) {
+
+				width: 150px;
+				height: 150px;
+			}
+
+			@include media-breakpoint-up(xl) {
+
+				width: 170px;
+				height: 170px;
+			}
+		}
+	}
+
+	.be-part-of-our-story {
+		border: 7px solid #e9ecef;
+		padding: 4px;
+		width: 80px;
+		height: 80px;
+		margin: 0 auto;
+		transition: .3s;
+
+		@include media-breakpoint-up(md) {
+
+			width: 100px;
+			height: 100px;
+		}
+
+		@include media-breakpoint-up(lg) {
+
+			width: 150px;
+			height: 150px;
+		}
+
+		@include media-breakpoint-up(xl) {
+
+			width: 170px;
+			height: 170px;
+		}
+
+		h4 {
+
+			font-size: 8px;
+			line-height: 9px;
+			color: #ffffff;
+			padding-top: 9px;
+
+
+			@include media-breakpoint-up(md) {
+				font-size: 13px;
+				line-height: 18px;
+
+			}
+
+			@include media-breakpoint-up(lg) {
+				font-size: 18px;
+				line-height: 26px;
+
+			}
+
+			@include media-breakpoint-up(xl) {
+				font-size: 18px;
+				line-height: 26px;
+
+			}
+		}
+	}
+}
+
+#team {
+	h2, h4 {
+		font-weight: 700;
+	}
+	.our-team-member-block {
+		span {
+			img {
+				width: 14rem;
+				height: 14rem;
+				border: 0.5rem solid rgba(0, 0, 0, 0.1);
+			}
+		}
+	}
+
+	a {
+		img {
+			width: auto;
+			height: 16px;
+		}
+	}
+}
+
+.about-heading,
+.our-team-heading,
+.contact-us-heading {
+	p {
+		font-style: italic;
+	}
+}
+
+#contact-us {
+	background-image: url('http://testlpage/wp-content/uploads/2023/09/map-image.png');
+	background-color: #212529;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	h2 {
+		font-weight: 700;
+		color: #ffffff;
+	}
+
+	#wpcf7-f134-o1 {
+		#submit-button {
+			width: 209px !important;
+			margin: 0 auto;
+		}
+	}
+
+}
+
+.wpcf7 form.failed .wpcf7-response-output,
+.wpcf7 form.aborted .wpcf7-response-output,
+.wpcf7 form.invalid .wpcf7-response-output {
+	color: #fff;
+}
+
+
+#client-slider {
+	img {
+		height: 44px;
+		width: auto;
+	}
+}
